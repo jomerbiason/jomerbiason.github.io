@@ -20,7 +20,7 @@ This site was built to showcase my background, skills, and experiences. You can 
 
 ## 📫 Contact Me
 
-- **Email**: your-email@example.com  
+- **Email**: jomerbiason@gmail.com  
 - **GitHub**: [github.com/jomerbiason](https://github.com/jomerbiason)
 
 ---
