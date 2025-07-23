@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jomer Biason | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://github.com/jomerbiason.png" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; padding: 2rem; }
-    .container { max-width: 1000px; margin: auto; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #1a1a1a; margin-bottom: 0.5rem; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.4rem; margin-top: 2rem; }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #007acc;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      color: #007acc;
+    }
+    h2:hover {
+      color: #005fa3;
+    }
     p { margin-bottom: 1rem; }
-    ul { margin-left: 1.5rem; }
-    .btn { display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: #007acc; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
+    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
     .btn:hover { background: #005fa3; }
     .cert-grid {
       display: grid;
@@ -25,11 +61,29 @@
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .cert-grid img:hover {
+      transform: scale(1.03);
     }
     .cert-grid p {
       margin-top: 0.5rem;
       font-size: 0.95rem;
       text-align: center;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .container { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
     }
   </style>
 </head>
@@ -81,7 +135,7 @@
         <a href="Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
           <img src="Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
         </a>
-        <p><strong>Installing and Configuring Computer Systems</strong><br>TESDA</p>
+        <p><strong>Computer Systems</strong><br>TESDA</p>
       </div>
       <div>
         <a href="Inventory Management Certification by HP.jpg" target="_blank">
@@ -101,12 +155,17 @@
         </a>
         <p><strong>Search Engine Optimization</strong><br>HubSpot Academy</p>
       </div>
-      
+    </div>
+
     <h2>Contact</h2>
     <p>Email: jomerbiason@gmail.com<br>
     GitHub: <a href="https://github.com/jomerbiason" target="_blank">github.com/jomerbiason</a></p>
 
     <a href="JAB_CV.pdf" class="btn" download>Download My CV</a>
+
+    <footer>
+      <p>Always learning. Always growing. Thanks for visiting my portfolio.</p>
+    </footer>
   </div>
 </body>
 </html>
