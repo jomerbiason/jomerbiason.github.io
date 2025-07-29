@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="https://github.com/jomerbiason.png" />
   <style>
+    
     :root {
       --bg-color: #f4f4f4;
       --text-color: #333;
@@ -135,6 +136,43 @@
       padding: 2rem 0;
       border-top: 1px solid #ddd;
     }
+    /* Grassland Parallax Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://i.imgur.com/5zjO1pA.png') center / cover no-repeat;
+      z-index: -2;
+      opacity: 0.6;
+    }
+  
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://i.imgur.com/T2aDsXA.png') center / cover no-repeat;
+      animation: moveClouds 60s linear infinite;
+      z-index: -1;
+      opacity: 0.4;
+    }
+  
+    @keyframes moveClouds {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 0; }
+    }
+  
+    section {
+      animation: fadeUp 1s ease-out;
+    }
+  
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -154,15 +192,15 @@
     <h1>Jomer Antoniego Biason</h1>
     <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
 
-    <h2 id="objective"><img src="icons/icons8-objective-64.png" class="sprite">Career Objective</h2>
+    <h2 id="objective"><img src="https://i.imgur.com/F6VW2ZP.png" class="sprite" alt="Pixel flower">Career Objective</h2>
     <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
 
-    <h2 id="education"><img src="icons/icons8-education-64.png" class="sprite">Education</h2>
+    <h2 id="education"><img src="https://i.imgur.com/tfsTtzR.png" class="sprite" alt="Pixel school">Education</h2>
     <p><strong>Bachelor of Science in Computer Science</strong><br>
     Cavite State University - Imus Campus (2017–2023)<br>
     Cavite State University - Rosario Campus (2013–2016)</p>
 
-    <h2><img src="icons/icons8-work-64.png" class="sprite">Work Experience</h2>
+    <h2><img src="icons/https://i.imgur.com/8PoGV3Z.png" class="sprite" alt="Pixel path/treehouse">Work Experience</h2>
     <ul>
       <li><strong>Management Information System Assistant</strong> – Easycash Lending Company Inc.</li>
       <li><strong>Technical Support</strong> – iQor Dasmariñas Cavite</li>
@@ -170,7 +208,7 @@
       <li><strong>Technical Support Intern</strong> – Micro Star International</li>
     </ul>
 
-    <h2 id="skills"><img src="icons/icons8-techskills-64.png" class="sprite">Technical Skills</h2>
+    <h2 id="skills"><img src="	https://i.imgur.com/49pBJiA.png" class="sprite" alt="Pixel toolbox">Technical Skills</h2>
     <ul>
       <li>Computer and Smartphone Technician</li>
       <li>Microsoft Office Suite</li>
@@ -178,14 +216,14 @@
       <li>Database Management</li>
     </ul>
 
-    <h2><img src="icons/icons8-skills-64.png" class="sprite">Personal Skills</h2>
+    <h2><img src="https://i.imgur.com/Yy9vfwB.png" class="sprite" alt="Pixel sparklestar">Personal Skills</h2>
     <ul>
       <li>Team and Independent Work</li>
       <li>Strong Communication</li>
       <li>Organization and Efficiency</li>
     </ul>
 
-    <h2 id="certifications"><img src="icons/icons8-certificate-64.png" class="sprite">Trainings & Certifications</h2>
+    <h2 id="certifications"><img src="https://i.imgur.com/B1ZKgJ0.png" class="sprite" alt="Pixel Scroll/certificate">Trainings & Certifications</h2>
     <div class="cert-grid">
       <div>
         <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
@@ -225,14 +263,14 @@
       </div>
     </div>
 
-    <h2 id="references"><img src="icons/icons8-reference-64.png" class="sprite">References</h2>
+    <h2 id="references"><img src="https://i.imgur.com/1AsxxuG.png" class="sprite" alt="Pixel bubble/bird">References</h2>
     <ul>
       <li><strong>Liezel Pentecostes</strong> – Loans Operation Manager<br><em>liezel.pentecostes@easycash.ph</em></li>
       <li><strong>Nomer Perez</strong> – MIS Specialist<br><em>nomer.perez@easycash.ph</em></li>
       <li><strong>Mary Christine Joy Romao</strong> – HR Specialist<br><em>joy.romao@easycash.ph</em></li>
     </ul>
 
-    <h2 id="contact"><img src="icons/icons8-contacts-64.png" class="sprite">Contact</h2>
+    <h2 id="contact"><img src="https://i.imgur.com/NpXWRjv.png" class="sprite" alt="Pixel Letteringrass">Contact</h2>
     <p>Email: <strong>jomerbiason@gmail.com</strong><br>
     GitHub: <a href="https://github.com/jomerbiason">github.com/jomerbiason</a><br>
     LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/">linkedin.com/jomerbiason</a></p>
