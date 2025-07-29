@@ -10,10 +10,10 @@
     * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      line-height: 1.6;
       background: #f4f4f4;
       color: #333;
       padding: 2rem;
+      line-height: 1.6;
     }
     .container {
       max-width: 1000px;
@@ -23,22 +23,24 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1, h2 {
-      margin-bottom: 0.5rem;
-      transition: color 0.3s ease;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #007acc;
-    }
+    h1 { font-size: 2rem; color: #007acc; margin-bottom: 0.5rem; }
     h2 {
       font-size: 1.4rem;
       margin-top: 2rem;
+      margin-bottom: 0.5rem;
       color: #007acc;
+      transition: color 0.3s ease;
     }
-    h2:hover {
-      color: #005fa3;
+    h2:hover { color: #005fa3; }
+    .sprite {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+      image-rendering: pixelated;
+      transition: transform 0.3s ease;
     }
+    .sprite:hover { transform: scale(1.2); }
     p { margin-bottom: 1rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1rem; }
     .btn {
@@ -63,9 +65,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
-    .cert-grid img:hover {
-      transform: scale(1.03);
-    }
+    .cert-grid img:hover { transform: scale(1.03); }
     .cert-grid p {
       margin-top: 0.5rem;
       font-size: 0.95rem;
@@ -90,25 +90,25 @@
 <body>
   <div class="container">
     <h1>Jomer Antoniego Biason</h1>
-    <p><strong>Freelance Computer and Smartphone Technician | Management Information System Assistant</strong></p>
+    <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
 
-    <h2>Career Objective</h2>
+    <h2><img src="icons/education.png" class="sprite" alt="Education Icon"> Career Objective</h2>
     <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
 
-    <h2>Education</h2>
+    <h2><img src="icons/education.png" class="sprite" alt="Education Icon"> Education</h2>
     <p><strong>Bachelor of Science in Computer Science</strong><br>
     Cavite State University - Imus Campus (2017 - 2023)<br>
     Cavite State University - Rosario Campus (2013 - 2016)</p>
 
-    <h2>Work Experience</h2>
+    <h2><img src="icons/work.png" class="sprite" alt="Work Icon"> Work Experience</h2>
     <ul>
       <li><strong>Management Information System Assistant – Easycash Lending Company Inc.</strong><br>data analysis, system maintenance, automation, and data privacy</li>
-      <li><strong>Technical Support – iQor Dasmariñas Cavite</strong><br>Tools navigation, troublesooting, documentation, and user support</li>
+      <li><strong>Technical Support – iQor Dasmariñas Cavite</strong><br>Tools navigation, troubleshooting, documentation, and user support</li>
       <li><strong>Station Head – SeaOil Zone III Dasmariñas Cavite</strong><br>Inventory management, cash analysis, performance reporting, and facility monitoring</li>
       <li><strong>Technical Support Intern – Micro Star International</strong><br>Shadowing, attending seminars, basic troubleshooting, and practicing corporate ethics</li>
     </ul>
 
-    <h2>Technical Skills</h2>
+    <h2><img src="icons/computer.png" class="sprite" alt="Skills Icon"> Technical Skills</h2>
     <ul>
       <li>Computer and Smartphone Technician</li>
       <li>Microsoft Office Suite Proficient</li>
@@ -116,14 +116,14 @@
       <li>Database</li>
     </ul>
 
-    <h2>Personal Skills</h2>
+    <h2><img src="icons/ribbon.png" class="sprite" alt="Personal Skills Icon"> Personal Skills</h2>
     <ul>
       <li>Ability to work independently and collaboratively</li>
       <li>Excellent written and verbal communication skills</li>
       <li>Highly organized and efficient</li>
     </ul>
 
-    <h2>Trainings & Certifications</h2>
+    <h2><img src="icons/pencil.png" class="sprite" alt="Certifications Icon"> Trainings & Certifications</h2>
     <div class="cert-grid">
       <div>
         <a href="Digital Marketing Certification by HubSpot Academy.png" target="_blank">
@@ -163,20 +163,13 @@
       </div>
     </div>
 
-    <h2>References</h2>
+    <h2><img src="icons/envelope.png" class="sprite" alt="Contact Icon"> References</h2>
     <ul>
       <li><strong>Liezel Pentecostes</strong><br>Loans Operation Manager – Easycash Lending Company Inc.<br><em>liezel.pentecostes@easycash.ph</em></li>
       <li><strong>Nomer Perez</strong><br>MIS Specialist – Easycash Lending Company Inc.<br><em>nomer.perez@easycash.ph</em></li>
       <li><strong>Mary Christine Joy Romao</strong><br>HR Specialist – Easycash Lending Company Inc.<br><em>joy.romao@easycash.ph</em></li>
     </ul>
 
-    <h2>Contact</h2>
+    <h2><img src="icons/envelope.png" class="sprite" alt="Contact Icon"> Contact</h2>
     <p>Email: <strong>jomerbiason@gmail.com</strong><br>
-      GitHub: <a href="https://github.com/jomerbiason" target="_blank">github.com/jomerbiason</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/" target="_blank">linkedin.com/jomerbiason</a>
-    </p>
-
-    <a href="Jomer-Antoniego-Biason_Curriculum-Vitae.pdf" class="btn" download>Download My CV</a>
-
-    <footer>
-      <p>Always learning. Always growing. Thanks for visiting my portfolio.</p
+     
