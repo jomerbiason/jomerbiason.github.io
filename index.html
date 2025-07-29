@@ -2,268 +2,214 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jomer Biason | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="https://github.com/jomerbiason.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #f4f4f4;
-      --text-color: #333;
+      --bg: #f4f4f9;
+      --text: #111;
+      --primary: #007acc;
       --container-bg: #fff;
-      --accent-color: #007acc;
-      --accent-hover: #005fa3;
     }
-    body.dark-mode {
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --container-bg: #1e1e1e;
-      --accent-color: #66d9ef;
-      --accent-hover: #33bfc1;
-    }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      transition: background 0.4s, color 0.4s;
+      padding: 0;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
     header {
+      background: var(--container-bg);
+      padding: 1.5rem;
       position: sticky;
       top: 0;
-      background: var(--container-bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
     nav {
+      margin-top: 0.5rem;
       display: flex;
-      gap: 1.2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
+
     nav a {
+      color: var(--primary);
       text-decoration: none;
-      color: var(--accent-color);
       font-weight: bold;
     }
-    nav a:hover {
-      color: var(--accent-hover);
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
     }
-    .dark-mode-toggle {
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+
     .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    h1 {
-      font-size: 2rem;
-      color: var(--accent-color);
-    }
+
     h2 {
-      font-size: 1.4rem;
       margin-top: 2rem;
-      color: var(--accent-color);
-      display: flex;
-      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
-    h2 img {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-    }
-    .sprite {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-    ul { margin-left: 1.5rem; }
-    .btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .btn:hover { background: var(--accent-hover); }
+
     .cert-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-    .cert-grid img {
-      width: 100%;
+
+    .cert-card {
+      background: var(--container-bg);
       border-radius: 8px;
-      object-fit: cover;
-      aspect-ratio: 4 / 3;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      text-align: center;
       transition: transform 0.3s ease;
     }
-    .cert-grid img:hover { transform: scale(1.03); }
+
+    .cert-card:hover {
+      transform: scale(1.02);
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .cert-card p {
+      margin: 0;
+      padding: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
     footer {
+      background: var(--container-bg);
       text-align: center;
       font-size: 0.9rem;
       color: #666;
       margin-top: 3rem;
-      padding: 2rem 0;
+      padding: 2rem;
       border-top: 1px solid #ddd;
     }
-    nav a.active {
-      text-decoration: underline;
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#objective">Objective</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#references">References</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="dark-mode-toggle">🌙 Dark Mode</button>
-  </header>
 
-  <div class="container">
-    <h1>Jomer Antoniego Biason</h1>
-    <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
+<header>
+  <h1>Jomer Biason</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <h2 id="objective"><img src="icons/icons8-objective-64.png" class="sprite">Career Objective</h2>
-    <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
+<div class="container">
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a systems analyst with a strong interest in automation, data analytics, and interface design. I love solving real-world problems using software.</p>
+  </section>
 
-    <h2 id="education"><img src="icons/icons8-education-64.png" class="sprite">Education</h2>
-    <p><strong>Bachelor of Science in Computer Science</strong><br>
-    Cavite State University - Imus Campus (2017–2023)<br>
-    Cavite State University - Rosario Campus (2013–2016)</p>
-
-    <h2><img src="icons/icons8-work-64.png" class="sprite">Work Experience</h2>
+  <section id="skills">
+    <h2>Skills</h2>
     <ul>
-      <li><strong>Management Information System Assistant</strong> – Easycash Lending Company Inc.</li>
-      <li><strong>Technical Support</strong> – iQor Dasmariñas Cavite</li>
-      <li><strong>Station Head</strong> – SeaOil Zone III Dasmariñas Cavite</li>
-      <li><strong>Technical Support Intern</strong> – Micro Star International</li>
+      <li>Web Development (HTML, CSS, JavaScript, PHP)</li>
+      <li>Database Design (MySQL, MongoDB)</li>
+      <li>Automation (Google Apps Script, Shell/BAT Scripting)</li>
+      <li>UI/UX Prototyping (Figma, Tailwind CSS)</li>
     </ul>
+  </section>
 
-    <h2 id="skills"><img src="icons/icons8-techskills-64.png" class="sprite">Technical Skills</h2>
+  <section id="projects">
+    <h2>Projects</h2>
     <ul>
-      <li>Computer and Smartphone Technician</li>
-      <li>Microsoft Office Suite</li>
-      <li>Web Development</li>
-      <li>Database Management</li>
+      <li><strong>Loan Application Tracker</strong> – Google Sheets + Apps Script based system to automate routing, duplication checks, and logging.</li>
+      <li><strong>SMS Blasting Tool</strong> – A PHP + M360 API integration for sending and logging mass SMS campaigns.</li>
+      <li><strong>Credit Checker Tool</strong> – Frontend + PHP SOAP client to retrieve credit reports from CIBI API.</li>
+      <li><strong>Personal Portfolio</strong> – A responsive and themed static website with pixel art animations.</li>
     </ul>
+  </section>
 
-    <h2><img src="icons/icons8-skills-64.png" class="sprite">Personal Skills</h2>
-    <ul>
-      <li>Team and Independent Work</li>
-      <li>Strong Communication</li>
-      <li>Organization and Efficiency</li>
-    </ul>
-
-    <h2 id="certifications"><img src="icons/icons8-certificate-64.png" class="sprite">Trainings & Certifications</h2>
+  <section id="certifications">
+    <h2>Certifications</h2>
     <div class="cert-grid">
-      <div>
-        <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
-          <img src="certs/Digital Marketing Certification by HubSpot Academy.jpg" alt="Digital Marketing - HubSpot">
+      <div class="cert-card">
+        <a href="certs/webdev.jpg" target="_blank">
+          <img src="certs/webdev.jpg" alt="Web Dev Cert">
+          <p><strong>Full Stack Web Development</strong><br>Udemy</p>
         </a>
-        <p><strong>Digital Marketing</strong><br>HubSpot Academy</p>
       </div>
-      <div>
-        <a href="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" target="_blank">
-          <img src="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" alt="Digital Marketing - Google">
+      <div class="cert-card">
+        <a href="certs/gas.jpg" target="_blank">
+          <img src="certs/gas.jpg" alt="GAS Cert">
+          <p><strong>Google Apps Script Automation</strong><br>Coursera</p>
         </a>
-        <p><strong>Digital Marketing</strong><br>Google</p>
       </div>
-      <div>
-        <a href="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
-          <img src="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
+      <div class="cert-card">
+        <a href="certs/uiux.jpg" target="_blank">
+          <img src="certs/uiux.jpg" alt="UI/UX Cert">
+          <p><strong>UI/UX Design</strong><br>Interaction Design Foundation</p>
         </a>
-        <p><strong>Installing and Configuring Computer Systems</strong><br>TESDA</p>
-      </div>
-      <div>
-        <a href="certs/Inventory Management Certification by HP.jpg" target="_blank">
-          <img src="certs/Inventory Management Certification by HP.jpg" alt="Inventory Management - HP">
-        </a>
-        <p><strong>Inventory Management</strong><br>HP</p>
-      </div>
-      <div>
-        <a href="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" target="_blank">
-          <img src="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" alt="SEO - HubSpot">
-        </a>
-        <p><strong>Search Engine Optimization</strong><br>HubSpot</p>
-      </div>
-      <div>
-        <a href="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" target="_blank">
-          <img src="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" alt="REST API - CvSU">
-        </a>
-        <p><strong>REST API with Springboot</strong><br>Cavite State University</p>
       </div>
     </div>
+  </section>
 
-    <h2 id="references"><img src="icons/icons8-reference-64.png" class="sprite">References</h2>
-    <ul>
-      <li><strong>Liezel Pentecostes</strong> – Loans Operation Manager<br><em>liezel.pentecostes@easycash.ph</em></li>
-      <li><strong>Nomer Perez</strong> – MIS Specialist<br><em>nomer.perez@easycash.ph</em></li>
-      <li><strong>Mary Christine Joy Romao</strong> – HR Specialist<br><em>joy.romao@easycash.ph</em></li>
-    </ul>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:jomerbiason@gmail.com">jomerbiason@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/jomerbiason" target="_blank">github.com/jomerbiason</a></p>
+  </section>
+</div>
 
-    <h2 id="contact"><img src="icons/icons8-contacts-64.png" class="sprite">Contact</h2>
-    <p>Email: <strong>jomerbiason@gmail.com</strong><br>
-    GitHub: <a href="https://github.com/jomerbiason">github.com/jomerbiason</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/">linkedin.com/jomerbiason</a></p>
+<footer>
+  &copy; 2025 Jomer Antoniego Biason. All rights reserved.
+</footer>
 
-    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn">📄 Download CV</a>
-
-    <footer>
-      &copy; 2025 Jomer Antoniego Biason. All rights reserved.
-    </footer>
-  </div>
-
-  <script>
-    // 🌙 Dark Mode Toggle
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
-
-    document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
-    });
-
-    // 🧭 Scrollspy Highlight
-    const sections = document.querySelectorAll("h2[id]");
-    const navLinks = document.querySelectorAll("nav a");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").slice(1) === entry.target.id) {
-              link.classList.add("active");
-            }
-          });
-        }
-      });
-    }, { threshold: 0.5 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>
