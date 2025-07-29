@@ -122,13 +122,6 @@
       padding: 2rem 0;
       border-top: 1px solid #ddd;
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    nav a.active {
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 0.2rem;
-    }
   </style>
 </head>
 <body>
@@ -180,8 +173,6 @@
     </ul>
 
     <h2 id="certifications"><img src="icons/icons8-certificate-64.png" class="sprite">Trainings & Certifications</h2>
-    <div class="cert-grid">
-    <h2 id="certifications"><img src="icons/icons8-certificate-64.png" class="sprite">Trainings & Certifications</h2>
           <div class="cert-grid">
         <div>
           <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
@@ -214,7 +205,6 @@
           <p><strong>Search Engine Optimization</strong><br>HubSpot</p>
         </div>
       </div>
-    </div>
 
     <h2 id="references"><img src="icons/icons8-reference-64.png" class="sprite">References</h2>
     <ul>
@@ -235,13 +225,51 @@
     </footer>
   </div>
 
-  <!-- ✅ Dark Mode + Scrollspy -->
+  <!-- ✅ Functional Dark Mode Script -->
   <script>
-    // 🌙 Dark Mode
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
+    <script>
+  // Check saved mode on load
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
 
-    document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-     
+  // Toggle button logic
+  document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Save preference
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+  });
+</script>
+<script>
+  // 🌙 Dark Mode Toggle (already working)
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+  });
+
+  // 🧭 Scrollspy Highlight
+  const sections = document.querySelectorAll("h2[id]");
+  const navLinks = document.querySelectorAll("nav a");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").slice(1) === entry.target.id) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
