@@ -4,34 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jomer Biason | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="https://github.com/jomerbiason.png" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --container-bg: #fff;
+      --accent-color: #007acc;
+      --accent-hover: #005fa3;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --container-bg: #1e1e1e;
+      --accent-color: #66d9ef;
+      --accent-hover: #33bfc1;
+    }
     body {
+      background: var(--bg-color);
+      color: var(--text-color);
       font-family: 'Inter', sans-serif;
-      background: #f4f4f4;
-      color: #333;
       padding: 2rem;
       line-height: 1.6;
+      transition: background 0.4s, color 0.4s;
     }
     .container {
       max-width: 1000px;
       margin: auto;
-      background: #fff;
+      background: var(--container-bg);
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 { font-size: 2rem; color: #007acc; margin-bottom: 0.5rem; }
+    h1 { font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem; }
     h2 {
       font-size: 1.4rem;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
-      color: #007acc;
+      color: var(--accent-color);
       transition: color 0.3s ease;
     }
-    h2:hover { color: #005fa3; }
+    h2:hover { color: var(--accent-hover); }
     .sprite {
       width: 24px;
       height: 24px;
@@ -41,19 +55,19 @@
       transition: transform 0.3s ease;
     }
     .sprite:hover { transform: scale(1.2); }
-    p { margin-bottom: 1rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    p { margin-bottom: 1rem; }
     .btn {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.5rem 1rem;
-      background: #007acc;
+      background: var(--accent-color);
       color: white;
       text-decoration: none;
       border-radius: 5px;
       transition: background 0.3s;
     }
-    .btn:hover { background: #005fa3; }
+    .btn:hover { background: var(--accent-hover); }
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -81,6 +95,22 @@
       font-size: 0.95rem;
       color: #666;
     }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
     @media (max-width: 600px) {
       body { padding: 1rem; }
       .container { padding: 1rem; }
@@ -90,18 +120,23 @@
   </style>
 </head>
 <body>
+  <button class="dark-mode-toggle">🌙 Dark Mode</button>
+
   <div class="container">
     <h1>Jomer Antoniego Biason</h1>
     <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
 
+    <!-- Career Objective -->
     <h2><img src="icons/education.png" class="sprite" alt="Education Icon"> Career Objective</h2>
     <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
 
+    <!-- Education -->
     <h2><img src="icons/education.png" class="sprite" alt="Education Icon"> Education</h2>
     <p><strong>Bachelor of Science in Computer Science</strong><br>
     Cavite State University - Imus Campus (2017 - 2023)<br>
     Cavite State University - Rosario Campus (2013 - 2016)</p>
 
+    <!-- Work Experience -->
     <h2><img src="icons/work.png" class="sprite" alt="Work Icon"> Work Experience</h2>
     <ul>
       <li><strong>Management Information System Assistant – Easycash Lending Company Inc.</strong><br>data analysis, system maintenance, automation, and data privacy</li>
@@ -110,6 +145,7 @@
       <li><strong>Technical Support Intern – Micro Star International</strong><br>Shadowing, attending seminars, basic troubleshooting, and practicing corporate ethics</li>
     </ul>
 
+    <!-- Technical Skills -->
     <h2><img src="icons/computer.png" class="sprite" alt="Skills Icon"> Technical Skills</h2>
     <ul>
       <li>Computer and Smartphone Technician</li>
@@ -118,6 +154,7 @@
       <li>Database</li>
     </ul>
 
+    <!-- Personal Skills -->
     <h2><img src="icons/ribbon.png" class="sprite" alt="Personal Skills Icon"> Personal Skills</h2>
     <ul>
       <li>Ability to work independently and collaboratively</li>
@@ -125,12 +162,13 @@
       <li>Highly organized and efficient</li>
     </ul>
 
+    <!-- Certifications -->
     <h2><img src="icons/pencil.png" class="sprite" alt="Certifications Icon"> Trainings & Certifications</h2>
     <div class="cert-grid">
-      <!-- Certification items go here -->
-      <!-- ... (keep as-is from your previous HTML) ... -->
+      <!-- You can insert your certification blocks here -->
     </div>
 
+    <!-- References -->
     <h2><img src="icons/envelope.png" class="sprite" alt="Contact Icon"> References</h2>
     <ul>
       <li><strong>Liezel Pentecostes</strong><br>Loans Operation Manager – Easycash Lending Company Inc.<br><em>liezel.pentecostes@easycash.ph</em></li>
@@ -138,17 +176,10 @@
       <li><strong>Mary Christine Joy Romao</strong><br>HR Specialist – Easycash Lending Company Inc.<br><em>joy.romao@easycash.ph</em></li>
     </ul>
 
+    <!-- Contact -->
     <h2><img src="icons/envelope.png" class="sprite" alt="Contact Icon"> Contact</h2>
     <p>Email: <strong>jomerbiason@gmail.com</strong><br>
     GitHub: <a href="https://github.com/jomerbiason" target="_blank">github.com/jomerbiason</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/" target="_blank">linkedin.com/jomerbiason</a>
-    </p>
+    LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/" target="_blank">linkedin.com/jomerbiason</a></p>
 
-    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn" download>Download My CV</a>
-
-    <footer>
-      <p>Always learning. Always growing. Thanks for visiting my portfolio.</p>
-    </footer>
-  </div>
-</body>
-</html>
+    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn"
