@@ -54,24 +54,22 @@
       image-rendering: pixelated;
       transition: transform 0.3s ease;
     }
-    .sprite:hover { transform: scale(1.2); }
-    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-    p { margin-bottom: 1rem; }
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
+      .sprite {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
     }
     .btn:hover { background: var(--accent-hover); }
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
+
+
+
     }
     .cert-grid img {
       width: 100%;
