@@ -44,32 +44,19 @@
       margin-bottom: 0.5rem;
       color: var(--accent-color);
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
     }
-    h2:hover { color: var(--accent-hover); }
-    .sprite {
+    h2 img.sprite {
       width: 24px;
       height: 24px;
-      vertical-align: middle;
-      margin-right: 8px;
-      image-rendering: pixelated;
-      transition: transform 0.3s ease;
-    }
-      .sprite {
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
       margin-right: 8px;
       object-fit: contain;
-      transition: transform 0.3s ease;
     }
-    .btn:hover { background: var(--accent-hover); }
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
-
-
-
     }
     .cert-grid img {
       width: 100%;
@@ -93,7 +80,6 @@
       font-size: 0.95rem;
       color: #666;
     }
-
     .dark-mode-toggle {
       position: fixed;
       top: 1rem;
@@ -108,7 +94,6 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       transition: background 0.3s;
     }
-
     @media (max-width: 600px) {
       body { padding: 1rem; }
       .container { padding: 1rem; }
@@ -119,22 +104,18 @@
 </head>
 <body>
   <button class="dark-mode-toggle">🌙 Dark Mode</button>
-
   <div class="container">
     <h1>Jomer Antoniego Biason</h1>
     <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
 
-    <!-- Career Objective -->
-    <h2><img src="icons/icons8-objective-64.png" class="sprite" alt="Education Icon"> Career Objective</h2>
+    <h2><img src="icons/icons8-objective-64.png" class="sprite" alt="Objective Icon"> Career Objective</h2>
     <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
 
-    <!-- Education -->
     <h2><img src="icons/icons8-education-64.png" class="sprite" alt="Education Icon"> Education</h2>
     <p><strong>Bachelor of Science in Computer Science</strong><br>
     Cavite State University - Imus Campus (2017 - 2023)<br>
     Cavite State University - Rosario Campus (2013 - 2016)</p>
 
-    <!-- Work Experience -->
     <h2><img src="icons/icons8-work-64.png" class="sprite" alt="Work Icon"> Work Experience</h2>
     <ul>
       <li><strong>Management Information System Assistant – Easycash Lending Company Inc.</strong><br>data analysis, system maintenance, automation, and data privacy</li>
@@ -143,8 +124,7 @@
       <li><strong>Technical Support Intern – Micro Star International</strong><br>Shadowing, attending seminars, basic troubleshooting, and practicing corporate ethics</li>
     </ul>
 
-    <!-- Technical Skills -->
-    <h2><img src="icons/icons8-techskills-64.png" class="sprite" alt="Skills Icon"> Technical Skills</h2>
+    <h2><img src="icons/icons8-techskills-64.png" class="sprite" alt="Technical Skills Icon"> Technical Skills</h2>
     <ul>
       <li>Computer and Smartphone Technician</li>
       <li>Microsoft Office Suite Proficient</li>
@@ -152,7 +132,6 @@
       <li>Database</li>
     </ul>
 
-    <!-- Personal Skills -->
     <h2><img src="icons/icons8-skills-64.png" class="sprite" alt="Personal Skills Icon"> Personal Skills</h2>
     <ul>
       <li>Ability to work independently and collaboratively</li>
@@ -160,10 +139,8 @@
       <li>Highly organized and efficient</li>
     </ul>
 
-    <!-- Certifications -->
     <h2><img src="icons/icons8-certificate-64.png" class="sprite" alt="Certifications Icon"> Trainings & Certifications</h2>
     <div class="cert-grid">
-      <!-- You can insert your certification blocks here -->
       <div>
         <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
           <img src="certs/Digital Marketing Certification by HubSpot Academy.jpg" alt="Digital Marketing - HubSpot">
@@ -197,23 +174,8 @@
       <div>
         <a href="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" target="_blank">
           <img src="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" alt="SEO - HubSpot">
-
         </a>
         <p><strong>Search Engine Optimization</strong><br>HubSpot Academy</p>
       </div>
+    </div>
 
-    <!-- References -->
-    <h2><img src="icons/icons8-reference-64.png" class="sprite" alt="Contact Icon"> References</h2>
-    <ul>
-      <li><strong>Liezel Pentecostes</strong><br>Loans Operation Manager – Easycash Lending Company Inc.<br><em>liezel.pentecostes@easycash.ph</em></li>
-      <li><strong>Nomer Perez</strong><br>MIS Specialist – Easycash Lending Company Inc.<br><em>nomer.perez@easycash.ph</em></li>
-      <li><strong>Mary Christine Joy Romao</strong><br>HR Specialist – Easycash Lending Company Inc.<br><em>joy.romao@easycash.ph</em></li>
-    </ul>
-
-    <!-- Contact -->
-    <h2><img src="icons/icons8-contacts-64.png" class="sprite" alt="Contact Icon"> Contact</h2>
-    <p>Email: <strong>jomerbiason@gmail.com</strong><br>
-    GitHub: <a href="https://github.com/jomerbiason" target="_blank">github.com/jomerbiason</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/" target="_blank">linkedin.com/jomerbiason</a></p>
-
-    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn"
