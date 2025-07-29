@@ -22,37 +22,85 @@
       --accent-hover: #33bfc1;
     }
     body {
+      margin: 0;
       background: var(--bg-color);
       color: var(--text-color);
       font-family: 'Inter', sans-serif;
-      padding: 2rem;
       line-height: 1.6;
       transition: background 0.4s, color 0.4s;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--container-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      gap: 1.2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: var(--accent-hover);
+    }
+    .dark-mode-toggle {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
     .container {
       max-width: 1000px;
       margin: auto;
-      background: var(--container-bg);
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 { font-size: 2rem; color: var(--accent-color); margin-bottom: 0.5rem; }
+    h1 {
+      font-size: 2rem;
+      color: var(--accent-color);
+    }
     h2 {
       font-size: 1.4rem;
       margin-top: 2rem;
-      margin-bottom: 0.5rem;
       color: var(--accent-color);
-      transition: color 0.3s ease;
       display: flex;
       align-items: center;
     }
-    h2 img.sprite {
+    h2 img {
       width: 24px;
       height: 24px;
       margin-right: 8px;
       object-fit: contain;
     }
+    .sprite {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    ul { margin-left: 1.5rem; }
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: var(--accent-hover); }
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -67,148 +115,91 @@
       transition: transform 0.3s ease;
     }
     .cert-grid img:hover { transform: scale(1.03); }
-    .cert-grid p {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      text-align: center;
-    }
     footer {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #ddd;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #666;
-    }
-    .dark-mode-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-    @media (max-width: 600px) {
-      body { padding: 1rem; }
-      .container { padding: 1rem; }
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.2rem; }
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
 <body>
-  <button class="dark-mode-toggle">🌙 Dark Mode</button>
+  <header>
+    <nav>
+      <a href="#objective">Objective</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#references">References</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="dark-mode-toggle">🌙 Dark Mode</button>
+  </header>
+
   <div class="container">
     <h1>Jomer Antoniego Biason</h1>
     <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
 
-    <h2><img src="icons/icons8-objective-64.png" class="sprite" alt="Objective Icon"> Career Objective</h2>
+    <h2 id="objective"><img src="icons/icons8-objective-64.png" class="sprite">Career Objective</h2>
     <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
 
-    <h2><img src="icons/icons8-education-64.png" class="sprite" alt="Education Icon"> Education</h2>
+    <h2 id="education"><img src="icons/icons8-education-64.png" class="sprite">Education</h2>
     <p><strong>Bachelor of Science in Computer Science</strong><br>
-    Cavite State University - Imus Campus (2017 - 2023)<br>
-    Cavite State University - Rosario Campus (2013 - 2016)</p>
+    Cavite State University - Imus Campus (2017–2023)<br>
+    Cavite State University - Rosario Campus (2013–2016)</p>
 
-    <h2><img src="icons/icons8-work-64.png" class="sprite" alt="Work Icon"> Work Experience</h2>
+    <h2><img src="icons/icons8-work-64.png" class="sprite">Work Experience</h2>
     <ul>
-      <li><strong>Management Information System Assistant – Easycash Lending Company Inc.</strong><br>data analysis, system maintenance, automation, and data privacy</li>
-      <li><strong>Technical Support – iQor Dasmariñas Cavite</strong><br>Tools navigation, troubleshooting, documentation, and user support</li>
-      <li><strong>Station Head – SeaOil Zone III Dasmariñas Cavite</strong><br>Inventory management, cash analysis, performance reporting, and facility monitoring</li>
-      <li><strong>Technical Support Intern – Micro Star International</strong><br>Shadowing, attending seminars, basic troubleshooting, and practicing corporate ethics</li>
+      <li><strong>Management Information System Assistant</strong> – Easycash Lending Company Inc.</li>
+      <li><strong>Technical Support</strong> – iQor Dasmariñas Cavite</li>
+      <li><strong>Station Head</strong> – SeaOil Zone III Dasmariñas Cavite</li>
+      <li><strong>Technical Support Intern</strong> – Micro Star International</li>
     </ul>
 
-    <h2><img src="icons/icons8-techskills-64.png" class="sprite" alt="Technical Skills Icon"> Technical Skills</h2>
+    <h2 id="skills"><img src="icons/icons8-techskills-64.png" class="sprite">Technical Skills</h2>
     <ul>
       <li>Computer and Smartphone Technician</li>
-      <li>Microsoft Office Suite Proficient</li>
-      <li>Web development</li>
-      <li>Database</li>
+      <li>Microsoft Office Suite</li>
+      <li>Web Development</li>
+      <li>Database Management</li>
     </ul>
 
-    <h2><img src="icons/icons8-skills-64.png" class="sprite" alt="Personal Skills Icon"> Personal Skills</h2>
+    <h2><img src="icons/icons8-skills-64.png" class="sprite">Personal Skills</h2>
     <ul>
-      <li>Ability to work independently and collaboratively</li>
-      <li>Excellent written and verbal communication skills</li>
-      <li>Highly organized and efficient</li>
+      <li>Team and Independent Work</li>
+      <li>Strong Communication</li>
+      <li>Organization and Efficiency</li>
     </ul>
 
-    <h2><img src="icons/icons8-certificate-64.png" class="sprite" alt="Certifications Icon"> Trainings & Certifications</h2>
+    <h2 id="certifications"><img src="icons/icons8-certificate-64.png" class="sprite">Trainings & Certifications</h2>
     <div class="cert-grid">
+      <!-- Certificate blocks go here -->
       <div>
         <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
           <img src="certs/Digital Marketing Certification by HubSpot Academy.jpg" alt="Digital Marketing - HubSpot">
         </a>
         <p><strong>Digital Marketing</strong><br>HubSpot Academy</p>
       </div>
-      <div>
-        <a href="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" target="_blank">
-          <img src="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" alt="Digital Marketing - Google">
-        </a>
-        <p><strong>Digital Marketing</strong><br>Google Digital Garage</p>
-      </div>
-      <div>
-        <a href="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
-          <img src="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
-        </a>
-        <p><strong>Installing & Configuring Computer Systems</strong><br>TESDA</p>
-      </div>
-      <div>
-        <a href="certs/Inventory Management Certification by HP.jpg" target="_blank">
-          <img src="certs/Inventory Management Certification by HP.jpg" alt="Inventory Management - HP LIFE">
-        </a>
-        <p><strong>Inventory Management</strong><br>HP LIFE</p>
-      </div>
-      <div>
-        <a href="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" target="_blank">
-          <img src="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" alt="Spring Boot REST API - CvSU">
-        </a>
-        <p><strong>Spring Boot REST API</strong><br>CvSU Imus Campus</p>
-      </div>
-      <div>
-        <a href="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" target="_blank">
-          <img src="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" alt="SEO - HubSpot">
-        </a>
-        <p><strong>Search Engine Optimization</strong><br>HubSpot Academy</p>
-      </div>
+      <!-- Add other certs similarly -->
     </div>
-    <!-- References -->
-    <h2><img src="icons/icons8-reference-64.png" class="sprite" alt="Reference Icon"> References</h2>
+
+    <h2 id="references"><img src="icons/icons8-reference-64.png" class="sprite">References</h2>
     <ul>
-      <li><strong>Liezel Pentecostes</strong><br>Loans Operation Manager – Easycash Lending Company Inc.<br><em>liezel.pentecostes@easycash.ph</em></li>
-      <li><strong>Nomer Perez</strong><br>MIS Specialist – Easycash Lending Company Inc.<br><em>nomer.perez@easycash.ph</em></li>
-      <li><strong>Mary Christine Joy Romao</strong><br>HR Specialist – Easycash Lending Company Inc.<br><em>joy.romao@easycash.ph</em></li>
+      <li><strong>Liezel Pentecostes</strong> – Loans Operation Manager<br><em>liezel.pentecostes@easycash.ph</em></li>
+      <li><strong>Nomer Perez</strong> – MIS Specialist<br><em>nomer.perez@easycash.ph</em></li>
+      <li><strong>Mary Christine Joy Romao</strong> – HR Specialist<br><em>joy.romao@easycash.ph</em></li>
     </ul>
 
-    <!-- Contact -->
-    <h2><img src="icons/icons8-contacts-64.png" class="sprite" alt="Contact Icon"> Contact</h2>
+    <h2 id="contact"><img src="icons/icons8-contacts-64.png" class="sprite">Contact</h2>
     <p>Email: <strong>jomerbiason@gmail.com</strong><br>
-    GitHub: <a href="https://github.com/jomerbiason" target="_blank">github.com/jomerbiason</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/" target="_blank">linkedin.com/jomerbiason</a></p>
+    GitHub: <a href="https://github.com/jomerbiason">github.com/jomerbiason</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/">linkedin.com/jomerbiason</a></p>
 
-    <!-- CV Download Button -->
-    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn" style="
-      display: inline-block;
-      margin-top: 1.5rem;
-      background: var(--accent-color);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    ">📄 Download CV</a>
+    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn">📄 Download CV</a>
 
-    <!-- Footer -->
     <footer>
       &copy; 2025 Jomer Antoniego Biason. All rights reserved.
     </footer>
-  </div>
-</body>
-</html>
-
+  </div
