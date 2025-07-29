@@ -122,6 +122,9 @@
       padding: 2rem 0;
       border-top: 1px solid #ddd;
     }
+    nav a.active {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -173,45 +176,45 @@
     </ul>
 
     <h2 id="certifications"><img src="icons/icons8-certificate-64.png" class="sprite">Trainings & Certifications</h2>
-          <div class="cert-grid">
-        <div>
-          <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
-            <img src="certs/Digital Marketing Certification by HubSpot Academy.jpg" alt="Digital Marketing - HubSpot">
-          </a>
-          <p><strong>Digital Marketing</strong><br>HubSpot Academy</p>
-        </div>
-        <div>
-          <a href="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" target="_blank">
-            <img src="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" alt="Digital Marketing - Google">
-          </a>
-          <p><strong>Digital Marketing</strong><br>Google</p>
-        </div>
-        <div>
-          <a href="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
-            <img src="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
-          </a>
-          <p><strong>Installating and Configurating Computer Systems</strong><br>TESDA</p>
-        </div>
-        <div>
-          <a href="certs/Inventory Management Certification by HP.jpg" target="_blank">
-            <img src="certs/Inventory Management Certification by HP.jpg" alt="Inventory Management - HP">
-          </a>
-          <p><strong>Inventory Management</strong><br>HP</p>
-        </div>
-        <div>
-          <a href="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" target="_blank">
-            <img src="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" alt="SEO - HubSpot">
-          </a>
-          <p><strong>Search Engine Optimization</strong><br>HubSpot</p>
-        </div>
+    <div class="cert-grid">
+      <div>
+        <a href="certs/Digital Marketing Certification by HubSpot Academy.jpg" target="_blank">
+          <img src="certs/Digital Marketing Certification by HubSpot Academy.jpg" alt="Digital Marketing - HubSpot">
+        </a>
+        <p><strong>Digital Marketing</strong><br>HubSpot Academy</p>
       </div>
-          <a href="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" target="_blank">
-            <img src="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" alt="REST API - CVsU">
-          </a>
-          <p><strong>REST API with Springboot</strong><br>Cavite State University</p>
-        </div>
+      <div>
+        <a href="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" target="_blank">
+          <img src="certs/Fundamentals of Digital Marketing Certification by Google Digital Garage.jpg" alt="Digital Marketing - Google">
+        </a>
+        <p><strong>Digital Marketing</strong><br>Google</p>
       </div>
-  
+      <div>
+        <a href="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
+          <img src="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
+        </a>
+        <p><strong>Installing and Configuring Computer Systems</strong><br>TESDA</p>
+      </div>
+      <div>
+        <a href="certs/Inventory Management Certification by HP.jpg" target="_blank">
+          <img src="certs/Inventory Management Certification by HP.jpg" alt="Inventory Management - HP">
+        </a>
+        <p><strong>Inventory Management</strong><br>HP</p>
+      </div>
+      <div>
+        <a href="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" target="_blank">
+          <img src="certs/Search Engine Optimization Certification by HubSpot Academy.jpg" alt="SEO - HubSpot">
+        </a>
+        <p><strong>Search Engine Optimization</strong><br>HubSpot</p>
+      </div>
+      <div>
+        <a href="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" target="_blank">
+          <img src="certs/REST API with Springboot Certification by CvSU Imus Campus.jpg" alt="REST API - CvSU">
+        </a>
+        <p><strong>REST API with Springboot</strong><br>Cavite State University</p>
+      </div>
+    </div>
+
     <h2 id="references"><img src="icons/icons8-reference-64.png" class="sprite">References</h2>
     <ul>
       <li><strong>Liezel Pentecostes</strong> – Loans Operation Manager<br><em>liezel.pentecostes@easycash.ph</em></li>
@@ -231,51 +234,36 @@
     </footer>
   </div>
 
-  <!-- ✅ Functional Dark Mode Script -->
   <script>
-    <script>
-  // Check saved mode on load
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
+    // 🌙 Dark Mode Toggle
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
 
-  // Toggle button logic
-  document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    // Save preference
-    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-  });
-</script>
-<script>
-  // 🌙 Dark Mode Toggle (already working)
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-
-  document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-  });
-
-  // 🧭 Scrollspy Highlight
-  const sections = document.querySelectorAll("h2[id]");
-  const navLinks = document.querySelectorAll("nav a");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").slice(1) === entry.target.id) {
-            link.classList.add("active");
-          }
-        });
-      }
+    document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
     });
-  }, { threshold: 0.5 });
 
-  sections.forEach(section => observer.observe(section));
-</script>
+    // 🧭 Scrollspy Highlight
+    const sections = document.querySelectorAll("h2[id]");
+    const navLinks = document.querySelectorAll("nav a");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").slice(1) === entry.target.id) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
