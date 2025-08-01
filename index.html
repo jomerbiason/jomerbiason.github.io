@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic metadata and page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jomer Biason | Portfolio</title>
+
+  <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon (GitHub profile image) -->
   <link rel="icon" href="https://github.com/jomerbiason.png" />
+
   <style>
+    /* CSS Variables for light and dark themes */
     :root {
       --bg-color: #f4f4f4;
       --text-color: #333;
@@ -14,6 +21,8 @@
       --accent-color: #007acc;
       --accent-hover: #005fa3;
     }
+
+    /* Override variables for dark mode */
     body.dark-mode {
       --bg-color: #121212;
       --text-color: #f0f0f0;
@@ -21,6 +30,8 @@
       --accent-color: #66d9ef;
       --accent-hover: #33bfc1;
     }
+
+    /* Global body styling */
     body {
       margin: 0;
       background: var(--bg-color);
@@ -29,6 +40,8 @@
       line-height: 1.6;
       transition: background 0.4s, color 0.4s;
     }
+
+    /* Sticky header with navigation */
     header {
       position: sticky;
       top: 0;
@@ -40,6 +53,8 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 1000;
     }
+
+    /* Navigation styling */
     nav {
       display: flex;
       gap: 1.2rem;
@@ -55,6 +70,8 @@
     nav a.active {
       text-decoration: underline;
     }
+
+    /* Dark mode toggle button */
     .dark-mode-toggle {
       background: var(--accent-color);
       color: white;
@@ -64,11 +81,15 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
+    /* Main content container */
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
+
+    /* Headings */
     h1 {
       font-size: 2rem;
       color: var(--accent-color);
@@ -80,6 +101,8 @@
       display: flex;
       align-items: center;
     }
+
+    /* Sprite icons next to headings */
     h2 img {
       width: 24px;
       height: 24px;
@@ -91,9 +114,13 @@
       margin-right: 8px;
       vertical-align: middle;
     }
+
+    /* Bullet point list indentation */
     ul {
       margin-left: 1.5rem;
     }
+
+    /* Call-to-action button styling */
     .btn {
       display: inline-block;
       margin-top: 1.5rem;
@@ -107,6 +134,8 @@
     .btn:hover {
       background: var(--accent-hover);
     }
+
+    /* Responsive certification grid */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -127,6 +156,8 @@
     .cert-grid img:hover {
       transform: scale(1.03);
     }
+
+    /* Footer section */
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -136,6 +167,7 @@
       border-top: 1px solid #ddd;
     }
 
+    /* Grassland background image */
     body::before {
       content: "";
       position: fixed;
@@ -148,6 +180,7 @@
       opacity: 0.7;
     }
 
+    /* Cloud animation layer */
     body::after {
       content: "";
       position: fixed;
@@ -161,22 +194,25 @@
       opacity: 0.5;
     }
 
+    /* Cloud scrolling animation */
     @keyframes moveClouds {
       0% { background-position: 0 0; }
       100% { background-position: 1000px 0; }
     }
 
+    /* Fade-in animation for sections */
     section {
       animation: fadeUp 1s ease-out;
     }
-
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
+  <!-- Navigation and Dark Mode Button -->
   <header>
     <nav>
       <a href="#objective">Objective</a>
@@ -189,19 +225,23 @@
     <button class="dark-mode-toggle">🌙 Dark Mode</button>
   </header>
 
+  <!-- Main Content Container -->
   <div class="container">
     <h1>Jomer Antoniego Biason</h1>
     <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
 
+    <!-- Career Objective Section -->
     <h2 id="objective"><img src="https://i.imgur.com/F6VW2ZP.png" class="sprite" alt="Pixel flower">Career Objective</h2>
-    <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company. Passionate about learning, problem-solving, and delivering real impact through technology.</p>
+    <p>Eager to apply my Computer Science skills in a fast-paced, growth-driven company...</p>
 
+    <!-- Education -->
     <h2 id="education"><img src="https://i.imgur.com/tfsTtzR.png" class="sprite" alt="Pixel school">Education</h2>
     <p><strong>Bachelor of Science in Computer Science</strong><br>
       Cavite State University - Imus Campus (2017–2023)<br>
       Cavite State University - Rosario Campus (2013–2016)</p>
 
-    <h2 id="experience"><img src="https://i.imgur.com/8PoGV3Z.png" class="sprite" alt="Pixel path/treehouse">Work Experience</h2>
+    <!-- Work Experience -->
+    <h2 id="experience"><img src="https://i.imgur.com/8PoGV3Z.png" class="sprite" alt="Pixel path">Work Experience</h2>
     <ul>
       <li><strong>Management Information System Assistant</strong> – Easycash Lending Company Inc.</li>
       <li><strong>Technical Support</strong> – iQor Dasmariñas Cavite</li>
@@ -209,6 +249,7 @@
       <li><strong>Technical Support Intern</strong> – Micro Star International</li>
     </ul>
 
+    <!-- Technical Skills -->
     <h2 id="skills"><img src="https://i.imgur.com/49pBJiA.png" class="sprite" alt="Pixel toolbox">Technical Skills</h2>
     <ul>
       <li>Computer and Smartphone Technician</li>
@@ -217,6 +258,7 @@
       <li>Database Management</li>
     </ul>
 
+    <!-- Personal Skills -->
     <h2 id="personal"><img src="https://i.imgur.com/Yy9vfwB.png" class="sprite" alt="Pixel sparkles">Personal Skills</h2>
     <ul>
       <li>Team and Independent Work</li>
@@ -224,6 +266,7 @@
       <li>Organization and Efficiency</li>
     </ul>
 
+    <!-- Certifications -->
     <h2 id="certifications"><img src="https://i.imgur.com/B1ZKgJ0.png" class="sprite" alt="Pixel certificate">Trainings & Certifications</h2>
     <div class="cert-grid">
       <div>
@@ -264,6 +307,7 @@
       </div>
     </div>
 
+    <!-- References -->
     <h2 id="references"><img src="https://i.imgur.com/1AsxxuG.png" class="sprite" alt="Pixel bird">References</h2>
     <ul>
       <li><strong>Liezel Pentecostes</strong> – Loans Operation Manager<br><em>liezel.pentecostes@easycash.ph</em></li>
@@ -271,33 +315,39 @@
       <li><strong>Mary Christine Joy Romao</strong> – HR Specialist<br><em>joy.romao@easycash.ph</em></li>
     </ul>
 
+    <!-- Contact Section -->
     <h2 id="contact"><img src="https://i.imgur.com/NpXWRjv.png" class="sprite" alt="Pixel letter">Contact</h2>
     <p>Email: <strong>jomerbiason@gmail.com</strong><br>
       GitHub: <a href="https://github.com/jomerbiason">github.com/jomerbiason</a><br>
       LinkedIn: <a href="https://www.linkedin.com/in/jomer-biason-6731b3245/">linkedin.com/jomerbiason</a>
     </p>
 
+    <!-- CV Download Button -->
     <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn">📄 Download CV</a>
   </div>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Jomer Antoniego Biason. All rights reserved.
   </footer>
 
+  <!-- JavaScript: Dark Mode + Active Section Highlight -->
   <script>
+    // Load saved theme preference
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
     }
 
+    // Toggle dark mode on button click
     document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
       localStorage.setItem('theme', theme);
     });
 
+    // Highlight active nav link on scroll
     const sections = document.querySelectorAll("h2[id]");
     const navLinks = document.querySelectorAll("nav a");
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
