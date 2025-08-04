@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic metadata and page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jomer Biason | Portfolio</title>
-
-  <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Favicon (GitHub profile image) -->
   <link rel="icon" href="https://github.com/jomerbiason.png" />
-
   <style>
-    /* CSS Variables for light and dark themes */
     :root {
       --bg-color: #f4f4f4;
       --text-color: #333;
@@ -22,7 +15,61 @@
       --accent-hover: #005fa3;
     }
 
-    /* Override variables for dark mode */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 0.5rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .dark-mode-toggle {
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 1.5rem 0;
+      }
+
+      ul {
+        margin-left: 1rem;
+        padding-left: 1rem;
+      }
+    }
+
     body.dark-mode {
       --bg-color: #121212;
       --text-color: #f0f0f0;
@@ -31,7 +78,6 @@
       --accent-hover: #33bfc1;
     }
 
-    /* Global body styling */
     body {
       margin: 0;
       background: var(--bg-color);
@@ -41,7 +87,6 @@
       transition: background 0.4s, color 0.4s;
     }
 
-    /* Sticky header with navigation */
     header {
       position: sticky;
       top: 0;
@@ -54,24 +99,29 @@
       z-index: 1000;
     }
 
-    /* Navigation styling */
     nav {
       display: flex;
       gap: 1.2rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
     }
+
     nav a {
       text-decoration: none;
       color: var(--accent-color);
       font-weight: bold;
+      padding: 0.3rem 0.5rem;
     }
+
     nav a:hover {
       color: var(--accent-hover);
     }
+
     nav a.active {
       text-decoration: underline;
     }
 
-    /* Dark mode toggle button */
     .dark-mode-toggle {
       background: var(--accent-color);
       color: white;
@@ -82,18 +132,17 @@
       transition: background 0.3s;
     }
 
-    /* Main content container */
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
 
-    /* Headings */
     h1 {
       font-size: 2rem;
       color: var(--accent-color);
     }
+
     h2 {
       font-size: 1.4rem;
       margin-top: 2rem;
@@ -102,12 +151,7 @@
       align-items: center;
     }
 
-    /* Sprite icons next to headings */
-    h2 img {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-    }
+    h2 img,
     .sprite {
       width: 24px;
       height: 24px;
@@ -115,12 +159,10 @@
       vertical-align: middle;
     }
 
-    /* Bullet point list indentation */
     ul {
       margin-left: 1.5rem;
     }
 
-    /* Call-to-action button styling */
     .btn {
       display: inline-block;
       margin-top: 1.5rem;
@@ -131,33 +173,36 @@
       border-radius: 5px;
       transition: background 0.3s;
     }
+
     .btn:hover {
       background: var(--accent-hover);
     }
 
-    /* Responsive certification grid */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
       margin-top: 1rem;
     }
+
     .cert-grid div {
       text-align: center;
     }
+
     .cert-grid img {
       width: 100%;
+      max-width: 100%;
       border-radius: 8px;
       object-fit: cover;
       aspect-ratio: 4 / 3;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
+
     .cert-grid img:hover {
       transform: scale(1.03);
     }
 
-    /* Footer section */
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -167,7 +212,6 @@
       border-top: 1px solid #ddd;
     }
 
-    /* Grassland background image */
     body::before {
       content: "";
       position: fixed;
@@ -180,7 +224,6 @@
       opacity: 0.7;
     }
 
-    /* Cloud animation layer */
     body::after {
       content: "";
       position: fixed;
@@ -194,22 +237,26 @@
       opacity: 0.5;
     }
 
-    /* Cloud scrolling animation */
     @keyframes moveClouds {
       0% { background-position: 0 0; }
       100% { background-position: 1000px 0; }
     }
 
-    /* Fade-in animation for sections */
     section {
       animation: fadeUp 1s ease-out;
     }
+
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+<body>
+  <!-- Your existing HTML content remains unchanged -->
+</body>
+</html>
+
 
 <body>
   <!-- Navigation and Dark Mode Button -->
@@ -285,7 +332,7 @@
         <a href="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
           <img src="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
         </a>
-        <p><strong>Installating and Configurating Computer Systems</strong><br>TESDA</p>
+        <p><strong>Installing and Configurating Computer Systems</strong><br>TESDA</p>
       </div>
       <div>
         <a href="certs/Inventory Management Certification by HP.jpg" target="_blank">
@@ -348,6 +395,7 @@
     // Highlight active nav link on scroll
     const sections = document.querySelectorAll("h2[id]");
     const navLinks = document.querySelectorAll("nav a");
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
