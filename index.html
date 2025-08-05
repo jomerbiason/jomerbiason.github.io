@@ -15,61 +15,6 @@
       --accent-hover: #005fa3;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 0.6rem;
-        margin-bottom: 0.5rem;
-      }
-
-      nav a {
-        font-size: 0.95rem;
-        padding: 0.3rem 0.5rem;
-      }
-
-      .dark-mode-toggle {
-        width: 100%;
-        padding: 0.5rem;
-        text-align: center;
-      }
-
-      .container {
-        padding: 1rem;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        padding: 1.5rem 0;
-      }
-
-      ul {
-        margin-left: 1rem;
-        padding-left: 1rem;
-      }
-    }
-
     body.dark-mode {
       --bg-color: #121212;
       --text-color: #f0f0f0;
@@ -212,32 +157,47 @@
       border-top: 1px solid #ddd;
     }
 
+    /* ✅ Background layers */
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
       background: url('https://opengameart.org/sites/default/files/field_background.png') center / cover no-repeat;
-      z-index: -2;
+      z-index: -3;
       opacity: 0.7;
     }
 
     body::after {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
       background: url('https://opengameart.org/sites/default/files/clouds1.png') repeat-x;
-      animation: moveClouds 60s linear infinite;
-      z-index: -1;
+      background-size: 300% auto;
+      animation: moveClouds 80s linear infinite;
+      z-index: -2;
       opacity: 0.5;
     }
 
+    .cloud-layer {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: url('https://opengameart.org/sites/default/files/clouds1.png') repeat-x;
+      background-size: 200% auto;
+      animation: moveCloudsSlower 120s linear infinite;
+      z-index: -1;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
     @keyframes moveClouds {
+      0% { background-position: 0 0; }
+      100% { background-position: 2000px 0; }
+    }
+
+    @keyframes moveCloudsSlower {
       0% { background-position: 0 0; }
       100% { background-position: 1000px 0; }
     }
@@ -250,16 +210,69 @@
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
+    /* ✅ Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 0.5rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .dark-mode-toggle {
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 1.5rem 0;
+      }
+
+      ul {
+        margin-left: 1rem;
+        padding-left: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Your existing HTML content remains unchanged -->
-</body>
-</html>
+  <!-- 🌥 Extra cloud layer -->
+  <div class="cloud-layer"></div>
 
-
-<body>
-  <!-- Navigation and Dark Mode Button -->
+  <!-- Header -->
   <header>
     <nav>
       <a href="#objective">Objective</a>
@@ -272,7 +285,7 @@
     <button class="dark-mode-toggle">🌙 Dark Mode</button>
   </header>
 
-  <!-- Main Content Container -->
+ <!-- Main Content Container -->
   <div class="container">
     <h1>Jomer Antoniego Biason</h1>
     <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
@@ -294,6 +307,7 @@
       <li><strong>Technical Support</strong> – iQor Dasmariñas Cavite</li>
       <li><strong>Station Head</strong> – SeaOil Zone III Dasmariñas Cavite</li>
       <li><strong>Technical Support Intern</strong> – Micro Star International</li>
+	<a href="#experience">Experience</a>
     </ul>
 
     <!-- Technical Skills -->
@@ -332,7 +346,7 @@
         <a href="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" target="_blank">
           <img src="certs/Installing and Configuring Computer Systems Certification by TESDA.jpg" alt="Computer Systems - TESDA">
         </a>
-        <p><strong>Installing and Configurating Computer Systems</strong><br>TESDA</p>
+        <p><strong>Installing and Configuring Computer Systems</strong><br>TESDA</p>
       </div>
       <div>
         <a href="certs/Inventory Management Certification by HP.jpg" target="_blank">
@@ -370,7 +384,7 @@
     </p>
 
     <!-- CV Download Button -->
-    <a href="Jomer‑Antoniego‑Biason_Curriculum‑Vitae.pdf" class="btn">📄 Download CV</a>
+    <a href="Jomer-Antoniego-Biason_Curriculum-Vitae.pdf" class="btn">📄 Download CV</a>
   </div>
 
   <!-- Footer -->
@@ -378,41 +392,36 @@
     &copy; 2025 Jomer Antoniego Biason. All rights reserved.
   </footer>
 
-  <!-- JavaScript: Dark Mode + Active Section Highlight -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Load saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-mode');
-    }
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dark Mode
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
 
-    // Toggle dark mode
-    const toggleBtn = document.querySelector('.dark-mode-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
+      document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
       });
-    }
 
-    // Highlight active nav link
-    const sections = document.querySelectorAll("h2[id]");
-    const navLinks = document.querySelectorAll("nav a");
+      // Active Nav Highlight
+      const sections = document.querySelectorAll("h2[id]");
+      const navLinks = document.querySelectorAll("nav a");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.toggle("active", link.getAttribute("href").slice(1) === entry.target.id);
-          });
-        }
-      });
-    }, { threshold: 0.5 });
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.toggle("active", link.getAttribute("href").slice(1) === entry.target.id);
+            });
+          }
+        });
+      }, { threshold: 0.5 });
 
-    sections.forEach(section => observer.observe(section));
-  });
-</script>
-
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 </body>
 </html>
