@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Jomer Antoniego Biason, freelance computer and smartphone technician and MIS assistant.">
   <title>Jomer Biason | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="https://github.com/jomerbiason.png" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     :root {
       --bg-color: #f4f4f4;
       --text-color: #333;
@@ -157,7 +161,6 @@
       border-top: 1px solid #ddd;
     }
 
-    /* ✅ Background layers */
     body::before {
       content: "";
       position: fixed;
@@ -211,7 +214,6 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* ✅ Responsive */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -269,23 +271,19 @@
   </style>
 </head>
 <body>
-  <!-- 🌥 Extra cloud layer -->
   <div class="cloud-layer"></div>
-
-  <!-- Header -->
   <header>
     <nav>
       <a href="#objective">Objective</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
+      <a href="#personal">Personal Skills</a>
       <a href="#certifications">Certifications</a>
       <a href="#references">References</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="dark-mode-toggle">🌙 Dark Mode</button>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
   </header>
-
-<!-- Main Content Container -->
 <div class="container">
   <h1>Jomer Antoniego Biason</h1>
   <p><strong>Freelance Computer and Smartphone Technician | MIS Assistant</strong></p>
@@ -410,25 +408,18 @@
   <footer>
     &copy; 2025 Jomer Antoniego Biason. All rights reserved.
   </footer>
-
-  <!-- JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Dark Mode
       if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
       }
-
       document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
       });
-
-      // Active Nav Highlight
       const sections = document.querySelectorAll("h2[id]");
       const navLinks = document.querySelectorAll("nav a");
-
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -438,8 +429,14 @@
           }
         });
       }, { threshold: 0.5 });
-
       sections.forEach(section => observer.observe(section));
+      document.querySelectorAll('.cert-grid img').forEach(img => {
+        img.setAttribute('loading', 'lazy');
+      });
+      document.querySelectorAll('a[href^="http"]').forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      });
     });
   </script>
 </body>
